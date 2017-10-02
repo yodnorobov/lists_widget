@@ -8,12 +8,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         return true;
     };
 
-    remote_script.render = function (self) {
-        console.log('render');
-        return true;
-    };
-
-    remote_script.bind_function = function (self) {
+    remote_script.bind_actions = function (self) {
         console.log('bind');
         return true;
     };
