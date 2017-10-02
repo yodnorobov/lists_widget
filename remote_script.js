@@ -41,7 +41,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
         return new Promise(_.bind(function (resolve, reject) {
             //Make a request to the remote server
             self.crm_post(
-                'http://test1-yodnorobov.codeanyapp.com',
+                'https://test1-yodnorobov.codeanyapp.com',
                 {},
                 function (msg) {
                     //Set elements to the required format and resolve
@@ -56,7 +56,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
         console.log('loadElements');
         return new Promise(_.bind(function (resolve, reject) {
             self.crm_post(
-                'http://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+type.type+'&entity_id='+id,
+                'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+type.type+'&entity_id='+id,
                 {},
                 function (msg) {
                     resolve(msg);
@@ -70,7 +70,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
         console.log('linkCard');
         return new Promise(_.bind(function (resolve, reject) {
             self.crm_post(
-                'http://test1-yodnorobov.codeanyapp.com/sdk_back/link.php',
+                'https://test1-yodnorobov.codeanyapp.com/sdk_back/link.php',
                 links,
                 function () {},
                 'json'
@@ -83,7 +83,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
     remote_script.searchDataInCard = function (query, type, id) {
         return new Promise(_.bind(function (resolve, reject) {
             self.crm_post(
-                'http://test1-yodnorobov.codeanyapp.com/sdk_back/search.php',
+                'https://test1-yodnorobov.codeanyapp.com/sdk_back/search.php',
                 {
                     query: query,
                     type: type,
