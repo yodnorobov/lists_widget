@@ -1,8 +1,8 @@
 
-define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
+define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal, _) {
 
     var remote_script = {};
-    
+
     remote_script.contacts_selected = function (self) {
         console.log('contacts_selected');
         console.log(self);
@@ -29,19 +29,19 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log('init');
         return true;
     };
-    
-        remote_script.onSave = function (self) {
+
+    remote_script.onSave = function (self) {
         console.log('onSave');
         return true;
     };
-    
-        remote_script.loadPreloadedData = function (self) {
-            console.log('loadPreloadedData');
-            
-            return new Promise(_.bind(function (resolve, reject) {
+
+    remote_script.loadPreloadedData = function (self) {
+        console.log('loadPreloadedData');
+
+        return new Promise(_.bind(function (resolve, reject) {
             //Make a request to the remote server
             self.crm_post(
-                'http://my.sdk.api.com',
+                'http://test1-yodnorobov.codeanyapp.com',
                 {},
                 function (msg) {
                     //Set elements to the required format and resolve
@@ -50,7 +50,52 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
                 'json'
             );
         }), this);
-        }
-    
+    };
+
+    remote_script.loadElements = function (self) {
+        console.log('loadElements');
+        return new Promise(_.bind(function (resolve, reject) {
+            self.crm_post(
+                'http://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+type.type+'&entity_id='+id,
+                {},
+                function (msg) {
+                    resolve(msg);
+                },
+                'json'
+            );
+        }), this);
+    };
+
+    remote_script.linkCard = function (self) {
+        console.log('linkCard');
+        return new Promise(_.bind(function (resolve, reject) {
+            self.crm_post(
+                'http://test1-yodnorobov.codeanyapp.com/sdk_back/link.php',
+                links,
+                function () {},
+                'json'
+            );
+
+            resolve();
+        }), this);
+    };
+
+    remote_script.searchDataInCard = function (query, type, id) {
+        return new Promise(_.bind(function (resolve, reject) {
+            self.crm_post(
+                'http://test1-yodnorobov.codeanyapp.com/sdk_back/search.php',
+                {
+                    query: query,
+                    type: type,
+                    id: id
+                },
+                function (msg) {
+                    resolve(msg);
+                },
+                'json'
+            );
+        }), this);
+    };
+
     return remote_script;
 });
