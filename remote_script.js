@@ -23,5 +23,10 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         return true;
     };
     
+        remote_script.onSave = function (self) {
+        console.log('onSave');
+        return true;
+    };
+    
     return remote_script;
 });
