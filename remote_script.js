@@ -5,6 +5,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     
     remote_script.contacts_selected = function (self) {
         console.log('contacts_selected');
+        console.log(self);
     };
 
     remote_script.render = function (self) {
