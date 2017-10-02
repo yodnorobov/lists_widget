@@ -8,6 +8,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         console.log(self);
         console.log(this);
         console.log(self.list_selected().selected);
+        console.log(lists);
     };
 
     remote_script.render = function (self) {
