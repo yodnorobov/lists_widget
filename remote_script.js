@@ -1,8 +1,8 @@
 define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
 
-  var Contact = {};
+  var remote_script = {};
 
-  Contact.render = function (self) {
+  remote_script.render = function (self) {
     if (self.system().area === 'cucard' || 'lcard') {
       console.log(self.system().area);
     }
@@ -25,7 +25,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
     return true;
   };
 
-  Contact.bind_function = function (self) {
+  remote_script.bind_function = function (self) {
     if (self.system().area === 'cucard' || 'lcard') {
       var globalTimeout = null;
 
@@ -99,7 +99,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
   //  return $('.feed-note-wrapper-amojo').last().find('p').text();
   //};
 
-  Contact.init = function (self) {
+  remote_script.init = function (self) {
     console.log('init');
     return true;
   };
