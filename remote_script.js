@@ -35,5 +35,22 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
         return true;
     };
     
+        remote_script.loadPreloadedData = function (self) {
+            console.log('loadPreloadedData');
+            
+            return new Promise(_.bind(function (resolve, reject) {
+            //Make a request to the remote server
+            self.crm_post(
+                'http://my.sdk.api.com',
+                {},
+                function (msg) {
+                    //Set elements to the required format and resolve
+                    resolve(msg);
+                },
+                'json'
+            );
+        }), this);
+        }
+    
     return remote_script;
 });
