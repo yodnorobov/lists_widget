@@ -74,11 +74,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
                     );
                 }), this);
             },
-            linkCard: function () {
-                console.log('linkCard');
-                console.log(self);
-                console.log(this);
-                console.log(self.links);
+            linkCard: function (links) {
                 console.log(links);
                 return new Promise(_.bind(function (resolve, reject) {
                     self.crm_post(
