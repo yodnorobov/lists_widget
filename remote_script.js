@@ -76,10 +76,12 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
             },
             linkCard: function () {
                 console.log('linkCard');
+                console.log(self);
+                console.log(this);
                 return new Promise(_.bind(function (resolve, reject) {
                     self.crm_post(
                         'https://test1-yodnorobov.codeanyapp.com/sdk_back/link.php',
-                        links,
+                        self.links,
                         function () {},
                         'json'
                     );
