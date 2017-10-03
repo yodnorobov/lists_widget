@@ -54,6 +54,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
 
     remote_script.loadElements = function (self) {
         console.log('loadElements');
+        console.log(server);
         return new Promise(_.bind(function (resolve, reject) {
             self.crm_post(
                 'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+this.type+'&entity_id='+this.id,
