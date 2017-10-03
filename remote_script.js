@@ -40,7 +40,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
                 return new Promise(_.bind(function (resolve, reject) {
                     console.log(type);
                     self.crm_post(
-                        'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+type+'&entity_id='+id,
+                        'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+type.type+'&entity_id='+id,
                         {},
                         function (msg) {
                             resolve(msg);
