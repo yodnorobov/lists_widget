@@ -95,7 +95,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
 
     remote_script.searchDataInCard = function (query, type, id) {
         return new Promise(_.bind(function (resolve, reject) {
-            this.crm_post(
+            self.crm_post(
                 'https://test1-yodnorobov.codeanyapp.com/sdk_back/search.php',
                 {
                     query: query,
