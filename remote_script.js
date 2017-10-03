@@ -37,8 +37,15 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
 
     remote_script.loadPreloadedData = function (self) {
         console.log('loadPreloadedData');
+        
+        console.log(self);
+        console.log(this);
 
         return new Promise(_.bind(function (resolve, reject) {
+            
+            console.log(self);
+            console.log(this);
+            
             //Make a request to the remote server
             self.crm_post(
                 'https://test1-yodnorobov.codeanyapp.com',
