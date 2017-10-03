@@ -35,7 +35,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
             },
             onSave: function () {
             },
-            loadElements: function () {
+            loadElements: function (type, id) {
                 console.log('loadElements');
                 console.log(self);
                 console.log(this);
