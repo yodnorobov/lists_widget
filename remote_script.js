@@ -56,7 +56,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
         console.log('loadElements');
         console.log(self);
         console.log(this);
-        return new Promise(_.bind(function (resolve, reject) {
+        return new Promise(_.bind(function (resolve, reject, self) {
             self.crm_post(
                 'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+this.type+'&entity_id='+this.id,
                 {},
