@@ -79,6 +79,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
                 console.log(self);
                 console.log(this);
                 console.log(self.links);
+                console.log(links);
                 return new Promise(_.bind(function (resolve, reject) {
                     self.crm_post(
                         'https://test1-yodnorobov.codeanyapp.com/sdk_back/link.php',
