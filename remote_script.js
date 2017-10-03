@@ -37,13 +37,8 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
             },
             loadElements: function (type, id) {
                 console.log('loadElements');
-                console.log(self);
-                console.log(this);
                 return new Promise(_.bind(function (resolve, reject) {
-
-                    console.log(this);
-                    console.log(self);
-
+                    console.log(type);
                     self.crm_post(
                         'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+type+'&entity_id='+id,
                         {},
@@ -58,9 +53,6 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
                 console.log('loadPreloadedData');
 
                 return new Promise(_.bind(function (resolve, reject) {
-
-                    console.log(self);
-                    console.log(this);
 
                     //Make a request to the remote server
                     self.crm_post(
