@@ -27,6 +27,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
             contacts: {
                 selected: function () {
                     console.log('contacts_selected');
+                    console.log(self.list_selected());
                 }
             },
             leads: {
