@@ -19,6 +19,8 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
             render: function () {
                 console.log('render');
 
+                self.widgetsOverlay(false);
+
                 self.render_template({
                     caption: {
                         class_name: 'js-ac-caption',
