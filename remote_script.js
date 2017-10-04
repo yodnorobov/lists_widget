@@ -26,7 +26,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
                     },
                     body: '',
                     render: '\
-                  <div class="ac-form-button ac_sub">widget code + self.get_settings().widget_code</div>'
+                  <div class="ac-form-button ac_sub">'+self.get_settings().widget_code+'</div>'
                 });
                 return true;
             },
