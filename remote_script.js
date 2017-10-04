@@ -1,4 +1,3 @@
-
 define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal, _) {
 
     var CustomWidget = function () {
@@ -19,6 +18,16 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
             },
             render: function () {
                 console.log('render');
+
+                self.render_template({
+                    caption: {
+                        class_name: 'js-ac-caption',
+                        html: ''
+                    },
+                    body: '',
+                    render: '\
+                  <div class="ac-form-button ac_sub">widget code + self.get_settings().widget_code</div>'
+                });
                 return true;
             },
             destroy: function () {
@@ -43,7 +52,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
                 return new Promise(_.bind(function (resolve, reject) {
                     console.log(type);
                     self.crm_post(
-                        'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type='+type.type+'&entity_id='+id,
+                        'https://test1-yodnorobov.codeanyapp.com/sdk_back/?products=true&type=' + type.type + '&entity_id=' + id,
                         {},
                         function (msg) {
                             resolve(msg);
@@ -59,7 +68,7 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
 
                     //Make a request to the remote server
                     self.crm_post(
-                        'https://test1-yodnorobov.codeanyapp.com',
+                        'https://test1-yodnorobov.codeanyapp.com/sdk_back/',
                         {},
                         function (msg) {
                             //Set elements to the required format and resolve
@@ -75,7 +84,8 @@ define(['jquery', 'lib/components/base/modal', 'underscore'], function ($, Modal
                     self.crm_post(
                         'https://test1-yodnorobov.codeanyapp.com/sdk_back/link.php',
                         links,
-                        function () {},
+                        function () {
+                        },
                         'json'
                     );
 
